@@ -1,0 +1,6 @@
+@import "../../configStyle/index.scss";
+
+.footer {
+  @include box(100%, 300px);
+  border-radius: 0;
+}

@@ -1,0 +1,6 @@
+@import "./configStyle/index.scss";
+
+body {
+  @include overal;
+  height: 100vh;
+}
