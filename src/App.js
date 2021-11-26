@@ -7,6 +7,19 @@ import { store } from "./redux/store";
 
 const theme = createTheme({
   direction: "rtl",
+  typography: {
+    fontFamily: "IRANSans",
+  },
+  palette: {
+    primary: {
+      // Purple and green play nicely together.
+      main: "#4f46e5",
+    },
+    secondary: {
+      // This is green.A700 as hex.
+      main: "#f5f3ff",
+    },
+  },
 });
 
 function App() {
