@@ -1,8 +1,5 @@
 @import "../../configStyle/index.scss";
 
 .footer {
-  @include box(100%, 300px);
-  border-radius: 0;
-  box-shadow: none;
-  background-color: $color-footer;
+  @include box(100%, 300px, 0, $color-footer,1rem 8rem);
 }

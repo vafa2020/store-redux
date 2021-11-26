@@ -2,14 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: iranyekan, Roboto, "Helvetica Neue", Arial, sans-serif;
-
+  font-family: "IRANSans";
 }
-@mixin box($width, $height) {
+@mixin box($width, $height, $radius, $bg-color,$padding) {
   width: $width;
   height: $height;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 4px 4px 0;
-  border-radius: 10px;
+  border-radius: $radius;
+  background-color: $bg-color;
+  padding: $padding;
   overflow: hidden;
 }
 @mixin textStyle($size, $weight, $color) {

@@ -1,1 +1,31 @@
 @import "../../configStyle/index.scss";
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+.logo{
+    height: 25px;
+    margin-left: 30px;
+}
+.items {
+  display: flex;
+  align-items: center;
+}
+.item {
+  list-style: none;
+  padding: 0 5px;
+  .link {
+    text-decoration: none;
+    color: $color-dark;
+    font-weight: bold;
+    padding: 0.5rem 0.8rem;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: $color-primary;
+      color: $color-light;
+      border-radius: 5px;
+    }
+  }
+  .activated {
+  }
+}
