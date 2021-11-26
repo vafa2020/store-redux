@@ -4,9 +4,9 @@ import logo from "../../img/logo.svg";
 const HeaderRight = () => {
   const Links = [
     { to: "/", title: "خانه" },
-    { to: "/", title: "دوره های آموزشی" },
-    { to: "/", title: "بلاگ ها" },
-    { to: "/", title: "درباره ی ما" },
+    { to: "/courses", title: "دوره های آموزشی" },
+    { to: "/blogs", title: "بلاگ ها" },
+    { to: "/about-us", title: "درباره ی ما" },
   ];
   return (
     <div className={classes.headerRight}>

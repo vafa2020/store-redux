@@ -10,6 +10,7 @@
     justify-content: center;
     .loginText {
       @include textStyle(1rem, bold, $color-primary);
+      cursor: pointer;
     }
     .iconLogin {
       display: flex;
@@ -40,7 +41,7 @@
       @include box(20px, 20px, 100%, red, 0);
       @include textStyle(0.8rem, bold, $color-light);
       position: absolute;
-      top:1px;
+      top: 1px;
       left: 14px;
       text-align: center;
     }
