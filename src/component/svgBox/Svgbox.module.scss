@@ -1,0 +1,17 @@
+@import "../../configStyle/index.scss";
+.Svgbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  img {
+    height: 40px;
+  }
+  p {
+    font-size: 0.8rem;
+    width: 155px;
+    text-align: center;
+    color: $color-text;
+  }
+}
