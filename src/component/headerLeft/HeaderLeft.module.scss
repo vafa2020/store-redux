@@ -13,8 +13,6 @@
     }
     .iconLogin {
       display: flex;
-      align-items: center;
-      justify-content: center;
       @include textStyle(1.5rem, bold, $color-primary);
       margin-left: 10px;
       padding: 1rem;
@@ -28,8 +26,9 @@
     margin-top: 9px;
     position: relative;
     .iconCart {
+      display: flex;
       @include textStyle(1.5rem, bold, $color-primary);
-      margin-left: 15px;
+      margin-left: 10px;
       padding: 1rem;
       &:hover {
         border-radius: 50%;
@@ -38,11 +37,11 @@
     }
 
     .badge {
-      @include box(20px, 20px, 100%, red,0);
+      @include box(20px, 20px, 100%, red, 0);
       @include textStyle(0.8rem, bold, $color-light);
       position: absolute;
-      top: -11px;
-      left: 20px;
+      top:1px;
+      left: 14px;
       text-align: center;
     }
   }

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import classes from "./HeaderRight.module.scss";
 import logo from "../../img/logo.svg";
 const HeaderRight = () => {
@@ -10,9 +10,9 @@ const HeaderRight = () => {
   ];
   return (
     <div className={classes.headerRight}>
-      <span>
+      <Link to="/">
         <img className={classes.logo} src={logo} alt="logo-icon" />
-      </span>
+      </Link>
       <nav>
         <ul className={classes.items}>
           {Links.map((item) => (
