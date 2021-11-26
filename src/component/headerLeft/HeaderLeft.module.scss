@@ -1,0 +1,33 @@
+@import "../../configStyle/index.scss";
+
+.boxLeft {
+  display: flex;
+  align-items: center;
+
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .loginText {
+      @include textStyle(1rem, bold, $color-primary);
+      
+    }
+    .iconLogin {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include textStyle(1.5rem, bold, $color-primary);
+      margin-left: 10px;
+      &:hover {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $color-secondary;
+      }
+    }
+  }
+  .cart {
+    @include textStyle(1.5rem, bold, $color-primary);
+    margin-left: 40px;
+  }
+}

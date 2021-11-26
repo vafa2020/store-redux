@@ -3,4 +3,6 @@
 .footer {
   @include box(100%, 300px);
   border-radius: 0;
+  box-shadow: none;
+  background-color: $color-footer;
 }
