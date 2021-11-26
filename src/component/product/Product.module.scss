@@ -1,5 +1,27 @@
 @import "../../configStyle/index.scss";
 
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
 .product {
-  
+  @include box(100%, 600px, 10px, $color-light, 0);
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 400px;
+    width: 100%;
+  }
+}
+.desc {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .timeBox {
+    display: flex;
+  }
 }

@@ -7,23 +7,23 @@ const Product = () => {
   return (
     <div className={classes.products}>
       {products.map((product) => (
-        <div>
+        <div className={classes.product}>
           <img src={product.image} alt="productImage" />
-          <div>
-            <h2>{product.title}</h2>
-            <div>
+          <div className={classes.desc}>
+            <h4>{product.title}</h4>
+            <div className={classes.timeBox}>
               <span>
                 <AiOutlineFieldTime />
               </span>
               <p>مدت: {product.time}ساعت</p>
             </div>
             <Link to={`courses/${product.name}`}>مشاهده دوره</Link>
-          </div>
-          <div>
-            <Button size="large" variant="contained" color="secondary">
-              ثبت نام دوره
-            </Button>
-            <span>{product.price} تومان</span>
+            <div>
+              <Button size="large" variant="contained" color="secondary">
+                ثبت نام دوره
+              </Button>
+              <span>{product.price} تومان</span>
+            </div>
           </div>
         </div>
       ))}
