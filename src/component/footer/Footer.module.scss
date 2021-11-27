@@ -1,5 +1,8 @@
 @import "../../configStyle/index.scss";
 
 .footer {
-  @include box(100%, 300px, 0, $color-footer,1rem 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @include box(100%,400px, 0, $color-footer,0 8rem);
 }

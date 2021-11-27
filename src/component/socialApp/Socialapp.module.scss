@@ -1,0 +1,17 @@
+@import "../../configStyle/index.scss";
+
+.socialApp {
+  margin-top: 20px;
+  ul {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(6, 150px);
+  }
+  li {
+    list-style: none;
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
