@@ -4,6 +4,7 @@ import Layout from "../../layout/Layout";
 import Mainmiddle from "../../component/mainMiddle/Mainmiddle";
 import Product from "../../component/product/Product";
 import Mainbottom from "../../component/mainBottom/Mainbottom";
+import Honors from "../../component/honors/Honors";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
         <Mainmiddle />
         <Product />
         <Mainbottom />
+        <Honors />
       </main>
     </Layout>
   );

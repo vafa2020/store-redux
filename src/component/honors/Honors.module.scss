@@ -1,0 +1,35 @@
+@import "../../configStyle/index.scss";
+
+.honors {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 30px;
+  padding: 0 8rem;
+}
+.honorsTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+}
+.expreience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    @include box(250px, 100px, 10px, $color-light, 10px);
+
+    h3 {
+      color: $color-secondary;
+    }
+  }
+}
