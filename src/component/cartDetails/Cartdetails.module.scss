@@ -1,1 +1,23 @@
 @import "../../configStyle/index.scss";
+
+.cartDetails {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 10px;
+    width: 100%;
+    background-color: $color-light;
+    border: 1px solid #ccc;
+    padding: 10px 30px;
+
+  img {
+    height: 200px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+}

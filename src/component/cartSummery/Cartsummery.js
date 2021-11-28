@@ -1,9 +1,7 @@
 import classes from "./Cartsummery.module.scss";
 
 const Cartsummery = () => {
-  return <div>
-      
-  </div>;
+  return <div>hi</div>;
 };
 
 export default Cartsummery;

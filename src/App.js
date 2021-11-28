@@ -4,6 +4,7 @@ import "./App.scss";
 import Homepage from "./pages/home/Homepage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import Cart from "./pages/cart/Cart";
 
 const theme = createTheme({
   direction: "rtl",
@@ -17,7 +18,7 @@ const theme = createTheme({
     },
     secondary: {
       // This is green.A700 as hex.
-      main: "#5B21B6"
+      main: "#5B21B6",
     },
   },
 });
@@ -28,6 +29,7 @@ function App() {
       <div dir="rtl" className="App">
         <ThemeProvider theme={theme}>
           <Routes>
+            <Route path="cart" element={<Cart />} />
             <Route path="/" element={<Homepage />} />
           </Routes>
         </ThemeProvider>

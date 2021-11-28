@@ -5,9 +5,9 @@ import Cartdetails from "../../component/cartDetails/Cartdetails";
 const Cart = () => {
   return (
     <Layout>
-      <div>
-        <Cartsummery />
+      <div className={classes.cart}>
         <Cartdetails />
+        <Cartsummery />
       </div>
     </Layout>
   );
