@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 const Product = () => {
   return (
-    <div className={classes.products}>
+    <div id="course" className={classes.products}>
       {products.map((product) => (
         <div className={classes.product}>
           <img src={product.image} alt="productImage" />
