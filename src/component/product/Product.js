@@ -4,11 +4,16 @@ import { AiOutlineFieldTime } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
+import { useDispatch } from "react-redux";
 const Product = () => {
+  const dispatch = useDispatch();
+  const addToCart = (product) => {
+    dispatch({ type: "ADD_TO_CART", payload: product });
+  };
   return (
     <div id="course" className={classes.products}>
       {products.map((product) => (
-        <div className={classes.product}>
+        <div key={product.id} className={classes.product}>
           <img src={product.image} alt="productImage" />
           <div className={classes.desc}>
             <h4>{product.title}</h4>
@@ -22,10 +27,17 @@ const Product = () => {
               <Link className={classes.linkCard} to={`courses/${product.name}`}>
                 مشاهده دوره
               </Link>
-              <span><HiOutlineArrowNarrowLeft/></span>
+              <span>
+                <HiOutlineArrowNarrowLeft />
+              </span>
             </div>
             <div className={classes.boxSignPrice}>
-              <Button size="large" variant="contained" color="secondary">
+              <Button
+                onClick={() => addToCart(product)}
+                size="large"
+                variant="contained"
+                color="secondary"
+              >
                 ثبت نام دوره
               </Button>
               <span>{product.price} تومان</span>

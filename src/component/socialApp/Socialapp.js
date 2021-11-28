@@ -24,7 +24,7 @@ const Socialapp = () => {
     <div className={classes.socialApp}>
       <ul>
         {items.map((item) => (
-          <li>
+          <li key={item.path}>
             <svg>
               <path d={item.path}></path>
             </svg>

@@ -1,9 +1,12 @@
 import { HiOutlineLogin } from "react-icons/hi";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import classes from "./HeaderLeft.module.scss";
 
 const HeaderLeft = () => {
+  const { cart } = useSelector((state) => state);
+  console.log(cart);
   return (
     <div className={classes.boxLeft}>
       <div className={classes.cart}>
@@ -12,7 +15,7 @@ const HeaderLeft = () => {
             <MdOutlineShoppingCart />
           </span>
         </Link>
-        <span className={classes.badge}>0</span>
+        <span className={classes.badge}>{cart.length}</span>
       </div>
       <div className={classes.login}>
         <Link to="/auth">

@@ -8,30 +8,31 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART: {
-      const updatedProduct = [...state.cart];
-      const indexProduct = updatedProduct.findIndex(
+      const updatedCart = [...state.cart];
+      const indexProduct = updatedCart.findIndex(
         (item) => item.id === action.payload.id
       );
       if (indexProduct < 0) {
-        updatedProduct.push({ ...action.payload, quantity: 1 });
+        updatedCart.push({ ...action.payload, quantity: 1 });
       }
-      const product = { ...updatedProduct[indexProduct] };
+      const product = { ...updatedCart[indexProduct] };
       product.quantity++;
-      updatedProduct[indexProduct] = product;
+      updatedCart[indexProduct] = product;
       return {
-        cart: updatedProduct,
+        ...state,
+        cart: updatedCart,
         total: state.total + action.payload.price,
       };
     }
     case DECREMENT: {
-      const updatedProduct = [...state.cart];
-      const indexProduct = updatedProduct.findIndex(
+      const updatedCart = [...state.cart];
+      const indexProduct = updatedCart.findIndex(
         (item) => item.id === action.payload.id
       );
-      const product = { ...updatedProduct[indexProduct] };
+      const product = { ...updatedCart[indexProduct] };
       if (product.quantity === 1) {
-        const removedProduct = updatedProduct.filter(
-          (item) => item.id != action.payload.id
+        const removedProduct = updatedCart.filter(
+          (item) => item.id !== action.payload.id
         );
         return {
           cart: removedProduct,
@@ -39,9 +40,9 @@ const cartReducer = (state = initialState, action) => {
         };
       }
       product.quantity--;
-      updatedProduct[indexProduct] = product;
+      updatedCart[indexProduct] = product;
       return {
-        cart: updatedProduct,
+        cart: updatedCart,
         total: state.total - action.payload.price,
       };
     }

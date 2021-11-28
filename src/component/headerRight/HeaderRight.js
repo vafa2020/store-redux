@@ -16,7 +16,7 @@ const HeaderRight = () => {
       <nav>
         <ul className={classes.items}>
           {Links.map((item) => (
-            <li className={classes.item}>
+            <li key={item.to} className={classes.item}>
               <NavLink
                 to={item.to}
                 className={({ isActive }) =>

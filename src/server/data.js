@@ -6,6 +6,7 @@ import Vscode from "../img/vs-code.png";
 import Flex from "../img/flex-grid.svg";
 export const products = [
   {
+    id: 1,
     name: "git-github",
     title: "دوره گیت و گیت هاب",
     description: [
@@ -20,6 +21,7 @@ export const products = [
     image: Git,
   },
   {
+    id: 2,
     name: "advanced-javascript",
     title: "دوره جامع و پیشرفته جاوااسکریپت",
     description: [{ support: "گارانتی مادام العمر" }, { support: "اورجینال" }],
@@ -30,6 +32,7 @@ export const products = [
     image: Javascript,
   },
   {
+    id: 3,
     name: "react-course",
     title: "دوره حرفه ای متخصص ریکت و ریداکس",
     description: [
@@ -44,6 +47,7 @@ export const products = [
     image: React,
   },
   {
+    id: 4,
     name: "responsive-web",
     title: "دوره طراحی وب رسپانسیو",
     description: [
@@ -58,6 +62,7 @@ export const products = [
     image: Html,
   },
   {
+    id: 5,
     name: "vs-code",
     title: "دوره حرفه ای  کار با VS Code",
 
@@ -73,6 +78,7 @@ export const products = [
     image: Vscode,
   },
   {
+    id: 6,
     name: "flex-grid-course",
     title: "دوره پروژه محور فلکس و گرید",
     description: [
