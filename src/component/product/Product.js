@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { useDispatch } from "react-redux";
+import { Helper } from "scriptpack";
 const Product = () => {
   const dispatch = useDispatch();
   const addToCart = (product) => {
@@ -40,7 +41,7 @@ const Product = () => {
               >
                 ثبت نام دوره
               </Button>
-              <span>{product.price} تومان</span>
+              <span>{Helper.toCurrencyFormat(product.price)} تومان</span>
             </div>
           </div>
         </div>

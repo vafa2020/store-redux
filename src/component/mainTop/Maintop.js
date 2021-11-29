@@ -1,7 +1,7 @@
 import classes from "./Maintop.module.scss";
 import Banner from "../../img/banner.png";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+
 const Maintop = () => {
   return (
     <div className={classes.mainTop}>

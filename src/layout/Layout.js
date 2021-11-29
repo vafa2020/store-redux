@@ -1,11 +1,12 @@
 import Footer from "../component/footer/Footer";
 import Header from "../component/Header/Header";
+import classes from "./Layout.module.scss"
 
 const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <main className={classes.main}>{children}</main>
       <Footer />
     </>
   );
