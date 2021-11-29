@@ -1,12 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import classes from "./Cartdetails.module.scss";
 import { BiCheckCircle } from "react-icons/bi";
 import { BiTrash } from "react-icons/bi";
 import { Helper } from "scriptpack";
 
-const Cartdetails = () => {
-  const { cart } = useSelector((state) => state);
-
+const Cartdetails = ({ cart }) => {
+  const dispatch = useDispatch();
+  const removeProduct = (product) => {
+    dispatch({ type: "DECREMENT", payload: product });
+  };
   return (
     <div className={classes.wrapper}>
       {cart.map((product) => (
@@ -31,7 +33,7 @@ const Cartdetails = () => {
             </p>
             <div className={classes.controller}>
               <p>{product.quantity}</p>
-              <p>
+              <p onClick={() => removeProduct(product)}>
                 <BiTrash />
               </p>
             </div>

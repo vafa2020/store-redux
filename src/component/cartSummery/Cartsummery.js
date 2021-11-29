@@ -1,6 +1,6 @@
 import classes from "./Cartsummery.module.scss";
 
-const Cartsummery = () => {
+const Cartsummery = ({cart,total}) => {
   return <div className={classes.cartSummery}>hi</div>;
 };
 
