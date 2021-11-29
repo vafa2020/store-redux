@@ -5,6 +5,9 @@ import Homepage from "./pages/home/Homepage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import Cart from "./pages/cart/Cart";
+import Productpage from "./pages/productPage/Productpage";
+import Aboutus from "./pages/about-us/Aboutus";
+import Blogs from "./pages/blogs/Blogs";
 
 const theme = createTheme({
   direction: "rtl",
@@ -29,8 +32,11 @@ function App() {
       <div dir="rtl" className="App">
         <ThemeProvider theme={theme}>
           <Routes>
-            <Route path="cart" element={<Cart />} />
             <Route path="/" element={<Homepage />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="courses" element={<Productpage />} />
+            <Route path="about-us" element={<Aboutus />} />
+            <Route path="blogs" element={<Blogs />} />
           </Routes>
         </ThemeProvider>
       </div>
