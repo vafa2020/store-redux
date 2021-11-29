@@ -8,6 +8,7 @@ import Cart from "./pages/cart/Cart";
 import Productpage from "./pages/productPage/Productpage";
 import Aboutus from "./pages/about-us/Aboutus";
 import Blogs from "./pages/blogs/Blogs";
+import Checkout from "./pages/checkout/Checkout";
 
 const theme = createTheme({
   direction: "rtl",
@@ -37,6 +38,7 @@ function App() {
             <Route path="courses" element={<Productpage />} />
             <Route path="about-us" element={<Aboutus />} />
             <Route path="blogs" element={<Blogs />} />
+            <Route path="checkout" element={<Checkout />} />
           </Routes>
         </ThemeProvider>
       </div>

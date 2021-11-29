@@ -1,0 +1,32 @@
+@import "../../configStyle/index.scss";
+.checkout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.empty {
+  width: 100%;
+  p {
+    background-color: lighten($color: red, $amount: 40);
+    color: $color-light;
+    padding: 20px;
+    border-radius: 10px;
+    animation: anim-p 0.9s ease-in infinite alternate;
+    @keyframes anim-p {
+      to {
+        background-color: red;
+      }
+    }
+  }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: $color-primary;
+    color: $color-light;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
