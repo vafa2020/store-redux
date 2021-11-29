@@ -38,6 +38,7 @@ const Product = () => {
             </div>
             <div className={classes.boxSignPrice}>
               <Button
+                href={checkInCart(cart, product) ? "/checkout" : ""}
                 onClick={() => addToCart(product)}
                 size="large"
                 variant="contained"
