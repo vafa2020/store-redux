@@ -23,6 +23,12 @@
   align-items: center;
   background-color: $secondary-color;
 }
+@mixin boxPrices {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 @mixin media($size) {
   @if ($size==M) {
