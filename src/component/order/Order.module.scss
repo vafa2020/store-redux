@@ -13,6 +13,7 @@
   .titles {
     @include boxPrices;
     border-bottom: 1px solid #ccc;
+    font-weight: bold;
   }
   .desc {
     @include boxPrices;
@@ -21,6 +22,7 @@
   }
   .total {
     @include boxPrices;
+    font-weight: bold;
     margin-top: 10px;
   }
   a {
