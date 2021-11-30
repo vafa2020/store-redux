@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import classes from "./HeaderLeft.module.scss";
 
 const HeaderLeft = () => {
-  const { cart } = useSelector((state) => state);
+  const { cart } = useSelector((state) => state.cart);
   console.log(cart);
   return (
     <div className={classes.boxLeft}>

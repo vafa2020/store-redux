@@ -7,12 +7,13 @@ import { HiOutlineArrowNarrowLeft } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { Helper } from "scriptpack";
 import { checkInCart } from "../../utils/checkInCart";
+import { addToCart } from "../../redux/cart/cartActions";
 
 const Product = () => {
-  const { cart } = useSelector((state) => state);
+  const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  const addToCart = (product) => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
+  const addCart = (product) => {
+    dispatch(addToCart(product));
   };
 
   return (
@@ -39,7 +40,7 @@ const Product = () => {
             <div className={classes.boxSignPrice}>
               <Button
                 href={checkInCart(cart, product) ? "/checkout" : ""}
-                onClick={() => addToCart(product)}
+                onClick={() => addCart(product)}
                 size="large"
                 variant="contained"
                 color="secondary"

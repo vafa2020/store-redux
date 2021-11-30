@@ -5,7 +5,7 @@ import Cartdetails from "../../component/cartDetails/Cartdetails";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const Cart = () => {
-  const { cart, total } = useSelector((state) => state);
+  const { cart,total } = useSelector((state) => state.cart);
   if (!cart.length) {
     return (
       <Layout>

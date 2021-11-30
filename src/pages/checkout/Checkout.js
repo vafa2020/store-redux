@@ -4,7 +4,7 @@ import Order from "../../component/order/Order";
 import Layout from "../../layout/Layout";
 import classes from "./Checkout.module.scss";
 const Checkout = () => {
-  const { cart, total } = useSelector((state) => state);
+  const { cart, total } = useSelector((state) => state.cart);
   if (!cart.length) {
     return (
       <Layout>
@@ -18,7 +18,7 @@ const Checkout = () => {
   return (
     <Layout>
       <div className={classes.checkout}>
-        <Order />
+        <Order total={total} cart={cart} />
       </div>
     </Layout>
   );

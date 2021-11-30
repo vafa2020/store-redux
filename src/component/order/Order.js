@@ -1,37 +1,33 @@
-import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Helper } from "scriptpack";
+import Discount from "../discount/Discount";
 import classes from "./Order.module.scss";
 
 const Order = ({ cart, total }) => {
-  const price = cart.reduce((Total, item) => {
-    return Total + item.price;
-  }, 0);
+  const [status, setStatus] = useState(false);
   return (
     <div className={classes.order}>
-      <div className={classes.price}>
-        <span>قیمت کالاها</span>
-        <span>{Helper.toCurrencyFormat(price)}</span>
+      <h2>سفارش شما</h2>
+      <div className={classes.titles}>
+        <span> محصول</span>
+        <span>جمع جزء</span>
       </div>
-      <div className={classes.discount}>
-        <span>تخفیف کالاها</span>
-        <span>{Helper.toCurrencyFormat(price - total)}</span>
-      </div>
+      {cart.map((item) => (
+        <div key={item.id} className={classes.desc}>
+          <span>
+            {item.title}*{item.quantity}
+          </span>
+          <span>{Helper.toCurrencyFormat(item.offPrice)}</span>
+        </div>
+      ))}
+      <p onClick={() => setStatus(!status)} className={classes.discount}>
+        کد تخفیف دارید؟
+      </p>
+      {status && <Discount />}
       <div className={classes.total}>
-        <span>جمع سبد خرید</span>
+        <span>مجموع</span>
         <span>{Helper.toCurrencyFormat(total)}</span>
       </div>
-      <Link to="/checkout">
-        <Button
-          className={classes.button}
-          href="#course"
-          size="large"
-          variant="contained"
-          color="secondary"
-        >
-          ادامه سفارش
-        </Button>
-      </Link>
     </div>
   );
 };
