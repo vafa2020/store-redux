@@ -1,0 +1,26 @@
+@import "../../configStyle/index.scss";
+.inputBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .label {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .input {
+    display: block;
+    border: 1px solid $color-primary;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+}
+.error {
+  color: red;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
