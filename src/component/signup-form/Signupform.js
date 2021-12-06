@@ -2,6 +2,7 @@ import classes from "./Signupform.module.scss";
 import Input from "../input/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -76,6 +77,9 @@ const Signupform = () => {
         >
           ثبت نام
         </button>
+        <Link className={classes.link} to="/login">
+          <p className={classes.textLink}> قبلا ثبت نام کردم </p>
+        </Link>
       </form>
     </div>
   );

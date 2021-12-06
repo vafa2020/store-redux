@@ -2,6 +2,7 @@ import classes from "./Loginform.module.scss";
 import Input from "../input/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -27,8 +28,20 @@ const Loginform = () => {
   return (
     <div className={classes.loginform}>
       <form className={classes.form} onSubmit={formik.handleSubmit}>
-        <Input type="email" name="email" label="ایمیل" formik={formik}  placeholder="ایمیل ..."/>
-        <Input type="password" name="password" label="پسورد" formik={formik} placeholder="پسورد ..."/>
+        <Input
+          type="email"
+          name="email"
+          label="ایمیل"
+          formik={formik}
+          placeholder="ایمیل ..."
+        />
+        <Input
+          type="password"
+          name="password"
+          label="پسورد"
+          formik={formik}
+          placeholder="پسورد ..."
+        />
         <button
           className={classes.button}
           type="submit"
@@ -36,6 +49,9 @@ const Loginform = () => {
         >
           ورود
         </button>
+        <Link className={classes.link} to="/signup">
+          <p className={classes.textLink}>ثبت نام نکرده ام</p>
+        </Link>
       </form>
     </div>
   );
