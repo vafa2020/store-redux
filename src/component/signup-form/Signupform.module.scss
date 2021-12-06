@@ -1,5 +1,5 @@
 @import "../../configStyle/index.scss";
-.loginform {
+.signupForm {
   display: flex;
   justify-content: center;
   width: 40%;
@@ -19,9 +19,9 @@
     padding: 10px 20px;
     box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px 0;
     background-color: $color-light;
+    margin-top: 30px;
     cursor: pointer;
     transition: 0.3s ease-in;
-    margin-top: 30px;
     &:hover {
       background-color: $color-primary;
       color: $color-light;
