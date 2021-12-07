@@ -3,6 +3,8 @@ import Input from "../input/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import { signUp } from "../../services/sinupService";
+import { useState } from "react";
 
 const initialValues = {
   name: "",
@@ -12,6 +14,7 @@ const initialValues = {
 };
 
 const Signupform = () => {
+  const [error, setError] = useState(null);
   const validationSchema = yup.object({
     name: yup
       .string()
@@ -26,12 +29,19 @@ const Signupform = () => {
       .required("شماره موبایل خود را وارد کنید.")
       .matches(
         /^(0|0098|\+98)9(0[1-5]|[1 3]\d|2[0-2]|98)\d{7}$/,
-        "شماره موبایل معتبر نیست."
+        "format is invalid"
       ),
     password: yup.string().required("پسورد را وارد کنید."),
   });
-  const onSubmit = (valuse) => {
-    console.log(valuse);
+  const onSubmit = async (valuse) => {
+    try {
+      const { data } = await signUp(valuse);
+      console.log(data);
+    } catch (error) {
+      if (error.response && error.response.data) {
+        setError(error.response.data.message);
+      }
+    }
   };
   const formik = useFormik({
     initialValues,
@@ -56,7 +66,7 @@ const Signupform = () => {
           placeholder="ایمیل ..."
         />
         <Input
-          type="number"
+          type="tel"
           name="phoneNumber"
           label="شماره موبایل"
           formik={formik}
@@ -70,6 +80,11 @@ const Signupform = () => {
           formik={formik}
           placeholder="پسورد ..."
         />
+        {error && (
+          <p style={{ color: "red", fontSize: "1.2rem", textAlign: "left" }}>
+            {error}
+          </p>
+        )}
         <button
           className={classes.button}
           type="submit"
