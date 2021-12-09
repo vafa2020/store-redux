@@ -3,6 +3,8 @@ import Input from "../input/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { loginUser } from "../../services/loginService";
 
 const initialValues = {
   email: "",
@@ -10,6 +12,7 @@ const initialValues = {
 };
 
 const Loginform = () => {
+  const [error, setError] = useState(null);
   const validationSchema = yup.object({
     email: yup
       .string()
@@ -17,8 +20,16 @@ const Loginform = () => {
       .required("ایمیل را وارد کنید."),
     password: yup.string().required("پسورد را وارد کنید."),
   });
-  const onSubmit = (valuse) => {
-    console.log(valuse);
+  const onSubmit = async (valuse) => {
+    try {
+      const { data } = await loginUser(valuse);
+      console.log(data);
+      setError(null);
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        setError(error.response.data.message);
+      }
+    }
   };
   const formik = useFormik({
     initialValues,
@@ -42,6 +53,11 @@ const Loginform = () => {
           formik={formik}
           placeholder="پسورد ..."
         />
+        {error && (
+          <p style={{ color: "red", fontSize: "1.2rem" }}>
+            {error}
+          </p>
+        )}
         <button
           className={classes.button}
           type="submit"

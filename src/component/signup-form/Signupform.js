@@ -37,6 +37,7 @@ const Signupform = () => {
     try {
       const { data } = await signUp(valuse);
       console.log(data);
+      setError(null)
     } catch (error) {
       if (error.response && error.response.data) {
         setError(error.response.data.message);
@@ -81,7 +82,7 @@ const Signupform = () => {
           placeholder="پسورد ..."
         />
         {error && (
-          <p style={{ color: "red", fontSize: "1.2rem", textAlign: "left" }}>
+          <p style={{ color: "red", fontSize: "1.2rem"}}>
             {error}
           </p>
         )}

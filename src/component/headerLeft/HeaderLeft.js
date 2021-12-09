@@ -18,7 +18,7 @@ const HeaderLeft = () => {
         <span className={classes.badge}>{cart.length}</span>
       </div>
       <div className={classes.login}>
-        <Link to="/auth">
+        <Link to="/login">
           <span className={classes.iconLogin}>
             <HiOutlineLogin />
           </span>
