@@ -5,6 +5,9 @@ import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { loginUser } from "../../services/loginService";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/auth/authActions";
+import { useSearchParams } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -12,7 +15,11 @@ const initialValues = {
 };
 
 const Loginform = () => {
+  const dispatch = useDispatch();
   const [error, setError] = useState(null);
+  const [searchParams] = useSearchParams();
+  const redirect = searchParams.get("redirect") || "";
+
   const validationSchema = yup.object({
     email: yup
       .string()
@@ -23,7 +30,7 @@ const Loginform = () => {
   const onSubmit = async (valuse) => {
     try {
       const { data } = await loginUser(valuse);
-      console.log(data);
+      dispatch(login(data));
       setError(null);
     } catch (error) {
       if (error.response && error.response.data.message) {
@@ -53,11 +60,8 @@ const Loginform = () => {
           formik={formik}
           placeholder="پسورد ..."
         />
-        {error && (
-          <p style={{ color: "red", fontSize: "1.2rem" }}>
-            {error}
-          </p>
-        )}
+        {error && <p style={{ color: "red", fontSize: "1.2rem" }}>{error}</p>}
+
         <button
           className={classes.button}
           type="submit"
@@ -65,7 +69,7 @@ const Loginform = () => {
         >
           ورود
         </button>
-        <Link className={classes.link} to="/signup">
+        <Link className={classes.link} to={`/signup?redirect=${redirect}`}>
           <p className={classes.textLink}>ثبت نام نکرده ام</p>
         </Link>
       </form>

@@ -1,12 +1,28 @@
 import { Link, NavLink } from "react-router-dom";
 import classes from "./HeaderRight.module.scss";
 import logo from "../../img/logo.svg";
+
 const HeaderRight = () => {
   const Links = [
     { to: "/", title: "خانه" },
-    { to: "/courses", title: "دوره های آموزشی" },
+    {
+      to: "/courses",
+      title: "دوره های آموزشی",
+      subMenu: [
+        { to: "/react", title: "ریکت" },
+        { to: "/javaScript", title: "جاوااسکریپت" },
+        { to: "/angular", title: "انگولار" },
+      ],
+    },
     { to: "/blogs", title: "بلاگ ها" },
-    { to: "/about-us", title: "درباره ی ما" },
+    {
+      to: "/about-us",
+      title: "درباره ی ما",
+      subMenu: [
+        { to: "/telegram", title: "تلگرام" },
+        { to: "/instagram", title: "اینستاگرام" },
+      ],
+    },
   ];
   return (
     <div className={classes.headerRight}>
@@ -24,6 +40,7 @@ const HeaderRight = () => {
                 }
               >
                 {item.title}
+                <SumMenu subMenu={item.subMenu}/>
               </NavLink>
             </li>
           ))}
@@ -34,3 +51,26 @@ const HeaderRight = () => {
 };
 
 export default HeaderRight;
+
+
+export const SumMenu = ({ subMenu }) => {
+  return (
+    <div className={classes.subMenu}>
+      <ul className={classes.itemsSubMenu}>
+        <li className={classes.itemSubMenu}>
+          {subMenu?.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `${classes.linkSubMenu} ${isActive ? classes.activated : ""}`
+              }
+            >
+              {item.title}
+            </NavLink>
+          ))}
+        </li>
+      </ul>
+    </div>
+  );
+};

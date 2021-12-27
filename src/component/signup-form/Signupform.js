@@ -5,6 +5,8 @@ import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { signUp } from "../../services/sinupService";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { signUpUser } from "../../redux/auth/authActions";
 
 const initialValues = {
   name: "",
@@ -14,6 +16,7 @@ const initialValues = {
 };
 
 const Signupform = () => {
+  const dispatch = useDispatch;
   const [error, setError] = useState(null);
   const validationSchema = yup.object({
     name: yup
@@ -36,8 +39,8 @@ const Signupform = () => {
   const onSubmit = async (valuse) => {
     try {
       const { data } = await signUp(valuse);
-      console.log(data);
-      setError(null)
+      dispatch(signUpUser(data));
+      setError(null);
     } catch (error) {
       if (error.response && error.response.data) {
         setError(error.response.data.message);
@@ -81,11 +84,7 @@ const Signupform = () => {
           formik={formik}
           placeholder="پسورد ..."
         />
-        {error && (
-          <p style={{ color: "red", fontSize: "1.2rem"}}>
-            {error}
-          </p>
-        )}
+        {error && <p style={{ color: "red", fontSize: "1.2rem" }}>{error}</p>}
         <button
           className={classes.button}
           type="submit"

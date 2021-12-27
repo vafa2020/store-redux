@@ -21,7 +21,7 @@ const Cartsummery = ({ cart, total }) => {
         <span>جمع سبد خرید</span>
         <span>{Helper.toCurrencyFormat(total)}</span>
       </div>
-      <Link to="/checkout">
+      <Link to="/login?redirect=checkout">
         <Button
           className={classes.button}
           href="#course"

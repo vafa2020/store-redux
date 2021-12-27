@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router";
 import "./App.scss";
 import Homepage from "./pages/home/Homepage";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { persistor, store } from "./redux/store";
 import Cart from "./pages/cart/Cart";
 import Productpage from "./pages/productPage/Productpage";
 import Aboutus from "./pages/about-us/Aboutus";
@@ -11,6 +11,7 @@ import Blogs from "./pages/blogs/Blogs";
 import Checkout from "./pages/checkout/Checkout";
 import Login from "./pages/login/Login";
 import Signup from "./pages/singUp/Signup";
+import { PersistGate } from "redux-persist/integration/react";
 
 const theme = createTheme({
   direction: "rtl",
@@ -32,20 +33,22 @@ const theme = createTheme({
 function App() {
   return (
     <Provider store={store}>
-      <div dir="rtl" className="App">
-        <ThemeProvider theme={theme}>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="courses" element={<Productpage />} />
-            <Route path="about-us" element={<Aboutus />} />
-            <Route path="blogs" element={<Blogs />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
-          </Routes>
-        </ThemeProvider>
-      </div>
+      <PersistGate loading={null} persistor={persistor}>
+        <div dir="rtl" className="App">
+          <ThemeProvider theme={theme}>
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="courses" element={<Productpage />} />
+              <Route path="about-us" element={<Aboutus />} />
+              <Route path="blogs" element={<Blogs />} />
+              <Route path="checkout" element={<Checkout />} />
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<Signup />} />
+            </Routes>
+          </ThemeProvider>
+        </div>
+      </PersistGate>
     </Provider>
   );
 }

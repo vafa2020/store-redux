@@ -6,7 +6,9 @@ import classes from "./HeaderLeft.module.scss";
 
 const HeaderLeft = () => {
   const { cart } = useSelector((state) => state.cart);
-  console.log(cart);
+  const user = useSelector((state) => state.auth.user);
+
+
   return (
     <div className={classes.boxLeft}>
       <div className={classes.cart}>
@@ -23,7 +25,7 @@ const HeaderLeft = () => {
             <HiOutlineLogin />
           </span>
         </Link>
-        <span className={classes.loginText}>ورود</span>
+        <span className={classes.loginText}>{user?user.name:"ورود"}</span>
       </div>
     </div>
   );

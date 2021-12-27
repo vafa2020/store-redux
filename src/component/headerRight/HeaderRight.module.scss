@@ -14,18 +14,59 @@
 .item {
   list-style: none;
   padding: 0 5px;
+  &:hover{
+    transition: 0.5s ease-in;
+    .subMenu{
+      display: block;
+    }
+  }
   .link {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: $color-dark;
     font-weight: bold;
     padding: 0.5rem 0.8rem;
     transition: all 0.2s linear;
+    position: relative;
     &:hover {
       background-color: $color-primary;
       color: $color-light;
       border-radius: 5px;
+     height: 100%;
+      
     }
   }
   .activated {
   }
+}
+//////subMenu
+@import "../../configStyle/index.scss";
+.subMenu{
+    display: none;
+    position: absolute;
+    top: 42px;
+    width: 120px;
+    background-color: lighten($color-primary,20);
+    border-radius: 5px;
+}
+.itemsSubMenu{
+    list-style: none;
+}
+.itemSubMenu{
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    text-align: center;
+  
+}
+.linkSubMenu{
+    color: $color-light;
+    padding: 5px;
+    transition: 0.3s ease-in;
+    &:hover{
+        width: 100%;
+        background-color: $color-light;
+        color: $color-dark;
+    }
 }

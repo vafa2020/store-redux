@@ -10,7 +10,7 @@
   border-radius: $radius;
   background-color: $bg-color;
   padding: $padding;
-  overflow: hidden;
+ 
 }
 @mixin textStyle($size, $weight, $color) {
   font-size: $size;
