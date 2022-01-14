@@ -4,10 +4,10 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { loginUser } from "../../services/loginService";
 import { useDispatch } from "react-redux";
-import { login } from "../../redux/auth/authActions";
 import { useSearchParams } from "react-router-dom";
+import { loginServer } from "../../services/loginService";
+import { loginUser } from "../../redux/auth/authActions";
 
 const initialValues = {
   email: "",
@@ -29,8 +29,8 @@ const Loginform = () => {
   });
   const onSubmit = async (valuse) => {
     try {
-      const { data } = await loginUser(valuse);
-      dispatch(login(data));
+      const { data } = await loginServer(valuse);
+      dispatch(loginUser(data));
       setError(null);
     } catch (error) {
       if (error.response && error.response.data.message) {

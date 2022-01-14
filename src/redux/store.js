@@ -6,12 +6,14 @@ import rootReducer from "./rootReducer";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const persistConfig = {
-  key: "auth",
+  key: "root",
   storage,
-  whitelist: ['user'] // which reducer want to store
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-const store = createStore(persistedReducer,composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(
+  persistedReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 const persistor = persistStore(store);
 
 export { store, persistor };

@@ -3,16 +3,16 @@ import Input from "../input/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { signUp } from "../../services/sinupService";
+import { signupServer } from "../../services/sinupService";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { signUpUser } from "../../redux/auth/authActions";
+import { signupUser } from "../../redux/auth/authActions";
 
 const initialValues = {
-  name: "",
   email: "",
-  phoneNumber: "",
   password: "",
+  name: "",
+  phoneNumber: "",
 };
 
 const Signupform = () => {
@@ -38,8 +38,8 @@ const Signupform = () => {
   });
   const onSubmit = async (valuse) => {
     try {
-      const { data } = await signUp(valuse);
-      dispatch(signUpUser(data));
+      const { data } = await signupServer(valuse);
+      dispatch(signupUser(data));
       setError(null);
     } catch (error) {
       if (error.response && error.response.data) {

@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import classes from "./Cartdetails.module.scss";
 import { BiCheckCircle } from "react-icons/bi";
 import { BiTrash } from "react-icons/bi";
@@ -19,8 +19,8 @@ const Cartdetails = ({ cart }) => {
           <div className={classes.boxDescription}>
             <h4>{product.title}</h4>
             <div className={classes.description}>
-              {product.description.map((desc) => (
-                <p key={desc.id} className={classes.paragraphDesc}>
+              {product.description.map((desc,index) => (
+                <p key={index} className={classes.paragraphDesc}>
                   <span className={classes.iconDesc}>
                     <BiCheckCircle />
                   </span>
