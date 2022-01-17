@@ -1,12 +1,12 @@
-import classes from "./Signupform.module.scss";
+import classes from "./Signinform.module.scss";
 import Input from "../input/Input";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link } from "react-router-dom";
-import { signupServer } from "../../services/sinupService";
+import { signinServer } from "../../services/signinService";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { signupUser } from "../../redux/auth/authActions";
+import { signinUser } from "../../redux/auth/authActions";
 
 const initialValues = {
   email: "",
@@ -15,8 +15,8 @@ const initialValues = {
   phoneNumber: "",
 };
 
-const Signupform = () => {
-  const dispatch = useDispatch;
+const Signinform = () => {
+  const dispatch = useDispatch();
   const [error, setError] = useState(null);
   const validationSchema = yup.object({
     name: yup
@@ -38,8 +38,8 @@ const Signupform = () => {
   });
   const onSubmit = async (valuse) => {
     try {
-      const { data } = await signupServer(valuse);
-      dispatch(signupUser(data));
+      const { data } = await signinServer(valuse);
+      dispatch(signinUser(data));
       setError(null);
     } catch (error) {
       if (error.response && error.response.data) {
@@ -53,7 +53,7 @@ const Signupform = () => {
     validationSchema,
   });
   return (
-    <div className={classes.signupForm}>
+    <div className={classes.Signinform}>
       <form className={classes.form} onSubmit={formik.handleSubmit}>
         <Input
           type="text"
@@ -100,4 +100,4 @@ const Signupform = () => {
   );
 };
 
-export default Signupform;
+export default Signinform;

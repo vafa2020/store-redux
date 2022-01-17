@@ -8,7 +8,8 @@ import Aboutus from "./pages/about-us/Aboutus";
 import Blogs from "./pages/blogs/Blogs";
 import Checkout from "./pages/checkout/Checkout";
 import Login from "./pages/login/Login";
-import Signup from "./pages/singUp/Signup";
+import Signin from "./pages/singin/Signin";
+
 
 const theme = createTheme({
   direction: "rtl",
@@ -39,7 +40,7 @@ function App() {
           <Route path="blogs" element={<Blogs />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup />} />
+          <Route path="signin" element={<Signin />} />
         </Routes>
       </ThemeProvider>
     </div>

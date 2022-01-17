@@ -1,8 +1,8 @@
-import { SIGN_UP, LOGIN } from "./authType";
+import { SIGN_IN, LOGIN } from "./authType";
 
-export const signupUser = (userData) => {
+export const signinUser = (userData) => {
   return {
-    type: SIGN_UP,
+    type: SIGN_IN,
     payload: userData,
   };
 };

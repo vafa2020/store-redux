@@ -69,7 +69,7 @@ const Loginform = () => {
         >
           ورود
         </button>
-        <Link className={classes.link} to={`/signup?redirect=${redirect}`}>
+        <Link className={classes.link} to={`/signin?redirect=${redirect}`}>
           <p className={classes.textLink}>ثبت نام نکرده ام</p>
         </Link>
       </form>
