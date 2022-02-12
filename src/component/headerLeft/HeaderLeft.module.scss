@@ -15,7 +15,6 @@
     .iconLogin {
       display: flex;
       @include textStyle(1.5rem, bold, $color-primary);
-      margin-left: 10px;
       padding: 1rem;
       &:hover {
         border-radius: 50%;
@@ -24,7 +23,6 @@
     }
   }
   .cart {
-    margin-top: 9px;
     position: relative;
     .iconCart {
       display: flex;
