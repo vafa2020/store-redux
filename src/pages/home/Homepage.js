@@ -9,13 +9,13 @@ import Honors from "../../component/honors/Honors";
 const Homepage = () => {
   return (
     <Layout>
-      <main className={classes.main}>
+      <div className={classes.main}>
         <Maintop />
         <Mainmiddle />
         <Product />
         <Mainbottom />
         <Honors />
-      </main>
+      </div>
     </Layout>
   );
 };
