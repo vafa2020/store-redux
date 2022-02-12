@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "IRANSans";
+  overflow: hidden;
 }
 @mixin box($width, $height, $radius, $bg-color,$padding) {
   width: $width;
