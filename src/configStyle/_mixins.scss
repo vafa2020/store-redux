@@ -4,14 +4,14 @@
   box-sizing: border-box;
   font-family: "IRANSans";
   overflow: hidden;
+  overflow-y: auto;
 }
-@mixin box($width, $height, $radius, $bg-color,$padding) {
+@mixin box($width, $height, $radius, $bg-color, $padding) {
   width: $width;
   height: $height;
   border-radius: $radius;
   background-color: $bg-color;
   padding: $padding;
- 
 }
 @mixin textStyle($size, $weight, $color) {
   font-size: $size;
