@@ -5,9 +5,9 @@ import { Button } from "@mui/material";
 const Maintop = () => {
   return (
     <div className={classes.mainTop}>
-      <span>
+      <div className={classes.boxImageBanner}>
         <img className={classes.banner} src={Banner} alt="banner" />
-      </span>
+      </div>
       <div className={classes.textBanner}>
         <h1>دوره های آموزشی آکادمی فرانت هوکس</h1>
         <p>برنامه نویسی را سریع، آسان وپروژه محور یاد بگیرید</p>

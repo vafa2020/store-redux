@@ -29,7 +29,7 @@ const HeaderRight = () => {
       <Link to="/">
         <img className={classes.logo} src={logo} alt="logo-icon" />
       </Link>
-      <nav>
+      <nav className={classes.nav}>
         <ul className={classes.items}>
           {Links.map((item) => (
             <li key={item.to} className={classes.item}>
@@ -51,7 +51,6 @@ const HeaderRight = () => {
 };
 
 export default HeaderRight;
-
 
 // export const SumMenu = ({ subMenu }) => {
 //   return (

@@ -2,10 +2,16 @@
 .headerRight {
   display: flex;
   align-items: center;
+
+  @include media(M) {
+    .nav {
+      display: none;
+    }
+  }
 }
-.logo{
-    height: 25px;
-    margin-left: 30px;
+.logo {
+  height: 25px;
+  margin-left: 30px;
 }
 .items {
   display: flex;
@@ -14,9 +20,9 @@
 .item {
   list-style: none;
   padding: 0 5px;
-  &:hover{
+  &:hover {
     transition: 0.5s ease-in;
-    .subMenu{
+    .subMenu {
       display: block;
     }
   }
@@ -33,8 +39,7 @@
       background-color: $color-primary;
       color: $color-light;
       border-radius: 5px;
-     height: 100%;
-      
+      height: 100%;
     }
   }
   .activated {
@@ -42,31 +47,30 @@
 }
 //////subMenu
 @import "../../configStyle/index.scss";
-.subMenu{
-    display: none;
-    position: absolute;
-    top: 42px;
-    width: 120px;
-    background-color: lighten($color-primary,20);
-    border-radius: 5px;
+.subMenu {
+  display: none;
+  position: absolute;
+  top: 42px;
+  width: 120px;
+  background-color: lighten($color-primary, 20);
+  border-radius: 5px;
 }
-.itemsSubMenu{
-    list-style: none;
+.itemsSubMenu {
+  list-style: none;
 }
-.itemSubMenu{
-    display: flex;
-    flex-direction: column;
-    z-index: 2;
-    text-align: center;
-  
+.itemSubMenu {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  text-align: center;
 }
-.linkSubMenu{
-    color: $color-light;
-    padding: 5px;
-    transition: 0.3s ease-in;
-    &:hover{
-        width: 100%;
-        background-color: $color-light;
-        color: $color-dark;
-    }
+.linkSubMenu {
+  color: $color-light;
+  padding: 5px;
+  transition: 0.3s ease-in;
+  &:hover {
+    width: 100%;
+    background-color: $color-light;
+    color: $color-dark;
+  }
 }
