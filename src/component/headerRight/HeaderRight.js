@@ -18,24 +18,4 @@ const HeaderRight = () => {
 
 export default HeaderRight;
 
-// export const SumMenu = ({ subMenu }) => {
-//   return (
-//     <div className={classes.subMenu}>
-//       <ul className={classes.itemsSubMenu}>
-//         <li className={classes.itemSubMenu}>
-//           {subMenu?.map((item) => (
-//             <NavLink
-//               key={item.to}
-//               to={item.to}
-//               className={({ isActive }) =>
-//                 `${classes.linkSubMenu} ${isActive ? classes.activated : ""}`
-//               }
-//             >
-//               {item.title}
-//             </NavLink>
-//           ))}
-//         </li>
-//       </ul>
-//     </div>
-//   );
-// };
+

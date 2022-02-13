@@ -6,8 +6,8 @@ import { NavLink } from "../navLink/NavLink";
 export const NavigationMobile = () => {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <nav className={classes.navigationMobile}>
-      <button
+    <>
+       <button
         onClick={() => setOpenMenu(!openMenu)}
         className={classes.hambergerMenu}
       >
@@ -17,11 +17,9 @@ export const NavigationMobile = () => {
           <GiHamburgerMenu size="large" />
         )}
       </button>
-      {openMenu && (
-        <div className={classes.boxHambergerMenu}>
-          <NavLink />
-        </div>
-      )}
+    <nav className={classes.navigationMobile}>
+      {openMenu && <NavLink />}
     </nav>
+    </>
   );
 };
