@@ -7,7 +7,7 @@ import { NavigationMobile } from "../navigationMobile/NavigationMobile";
 const HeaderRight = () => {
   return (
     <div className={classes.headerRight}>
-      <NavigationMobile/>
+      <NavigationMobile />
       <Link to="/">
         <img className={classes.logo} src={logo} alt="logo-icon" />
       </Link>
@@ -17,5 +17,3 @@ const HeaderRight = () => {
 };
 
 export default HeaderRight;
-
-

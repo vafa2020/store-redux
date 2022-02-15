@@ -1,8 +1,5 @@
 @import "../../configStyle/index.scss";
 .navigationMobile {
-  position: relative;
-}
-.hambergerMenu {
   display: none;
 }
 @include media(M) {
