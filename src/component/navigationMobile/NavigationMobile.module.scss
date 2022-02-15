@@ -3,12 +3,14 @@
   display: none;
 }
 @include media(M) {
-  .hambergerMenu {
+  .navigationMobile {
     display: flex;
-    border: none;
-    background-color: transparent;
-    width: 30px;
-    height: 30px;
-    color: #733dd8;
+   
+    .hamberger {
+      color: #733dd8;
+      position: absolute;
+      right: 5%;
+      top: 25%;
+    }
   }
 }

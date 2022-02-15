@@ -2,48 +2,23 @@
 .headerRight {
   display: flex;
   align-items: center;
- 
+
+  .navigationMobile {
+    display: none;
+  }
 }
 .logo {
   height: 25px;
   margin-left: 30px;
 }
-
 @include media(M) {
-  .logo {
-    margin-left: 0;
-    margin-right: 10px;
-    margin-top: 8px;
-    height: 31px;
-  }
-}
-
-//////subMenu
-@import "../../configStyle/index.scss";
-.subMenu {
-  display: none;
-  position: absolute;
-  top: 42px;
-  width: 120px;
-  background-color: lighten($color-primary, 20);
-  border-radius: 5px;
-}
-.itemsSubMenu {
-  list-style: none;
-}
-.itemSubMenu {
-  display: flex;
-  flex-direction: column;
-  z-index: 2;
-  text-align: center;
-}
-.linkSubMenu {
-  color: $color-light;
-  padding: 5px;
-  transition: 0.3s ease-in;
-  &:hover {
-    width: 100%;
-    background-color: $color-light;
-    color: $color-dark;
+  .headerRight {
+    .logo {
+      display: inline-block;
+      position: absolute;
+      right: 20%;
+      top: 25%;
+      height:30px;
+    }
   }
 }

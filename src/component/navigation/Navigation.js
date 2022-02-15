@@ -1,11 +1,11 @@
 import React from "react";
-import { NavLink } from "../navLink/NavLink";
+import { NavLinks } from "../navLinks/NavLinks";
 import classes from "./Navigation.module.scss";
 
 export const Navigation = () => {
   return (
-    <nav className={classes.nav}>
-      <NavLink />
+    <nav className={classes.navigation}>
+      <NavLinks />
     </nav>
   );
 };

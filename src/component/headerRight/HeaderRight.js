@@ -7,11 +7,11 @@ import { NavigationMobile } from "../navigationMobile/NavigationMobile";
 const HeaderRight = () => {
   return (
     <div className={classes.headerRight}>
+      <Navigation />
       <NavigationMobile />
       <Link to="/">
         <img className={classes.logo} src={logo} alt="logo-icon" />
       </Link>
-      <Navigation />
     </div>
   );
 };

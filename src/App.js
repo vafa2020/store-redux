@@ -11,7 +11,6 @@ import Login from "./pages/login/Login";
 import Signin from "./pages/singin/Signin";
 
 const theme = createTheme({
-  direction: "rtl",
   typography: {
     fontFamily: "IRANSans",
   },
@@ -29,18 +28,20 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="cart" element={<Cart />} />
-        <Route path="courses" element={<Productpage />} />
-        <Route path="about-us" element={<Aboutus />} />
-        <Route path="blogs" element={<Blogs />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="login" element={<Login />} />
-        <Route path="signin" element={<Signin />} />
-      </Routes>
-    </ThemeProvider>
+    <>
+      <ThemeProvider theme={theme}>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="courses" element={<Productpage />} />
+          <Route path="about-us" element={<Aboutus />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signin" element={<Signin />} />
+        </Routes>
+      </ThemeProvider>
+    </>
   );
 }
 

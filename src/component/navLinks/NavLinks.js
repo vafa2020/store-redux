@@ -1,6 +1,6 @@
 import React from "react";
-import classes from "./NavLink.module.scss";
-import { NavLink as Link } from "react-router-dom";
+import classes from "./NavLinks.module.scss";
+import { NavLink } from "react-router-dom";
 const Links = [
   { to: "/", title: "خانه" },
   {
@@ -13,19 +13,23 @@ const Links = [
     title: "درباره ی ما",
   },
 ];
-export const NavLink = () => {
+export const NavLinks = ({ isMobile, closeMobileNavigation }) => {
   return (
     <ul className={classes.items}>
       {Links.map((item) => (
-        <li key={item.to} className={classes.item}>
-          <Link
+        <li
+          key={item.to}
+          className={classes.item}
+          onClick={() => isMobile && closeMobileNavigation()}
+        >
+          <NavLink
             to={item.to}
             className={({ isActive }) =>
               `${classes.link} ${isActive ? classes.activated : ""}`
             }
           >
             {item.title}
-          </Link>
+          </NavLink>
         </li>
       ))}
     </ul>

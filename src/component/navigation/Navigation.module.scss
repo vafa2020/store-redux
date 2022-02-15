@@ -1,7 +1,7 @@
 @import "../../configStyle/index.scss";
+
 @include media(M) {
-  .nav {
+  .navigation {
     display: none;
   }
 }
-
