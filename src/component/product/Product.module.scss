@@ -58,3 +58,17 @@
   align-items: center;
   justify-content: space-between;
 }
+@include media(M) {
+  .products {
+    display: flex;
+    flex-direction: column;
+    .product {
+      @include box(100%, unset, 10px, $color-light, 0);
+
+      img {
+        height: 250px;
+        width: 100%;
+      }
+    }
+  }
+}

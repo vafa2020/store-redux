@@ -1,5 +1,5 @@
 import classes from "./Mainbottom.module.scss";
-import Intro from "../../img/frontend-intro.svg";
+import Intro from "../../img/frontend-intro.png";
 import { Link } from "react-router-dom";
 const Mainbottom = () => {
   return (
@@ -8,6 +8,9 @@ const Mainbottom = () => {
         <img className={classes.banner} src={Intro} alt="Intro" />
       </span>
       <div className={classes.textBanner}>
+        <p style={{ fontWeight: "bold", margin: 0 }}>
+          فرانت اند (Front-End) چیه؟{" "}
+        </p>
         <p>
           بذار خیلی خودمونی و به دور از تعاریف کلیشه ای بهت بگم که فرانت اند
           (front-end) چیه ؟ کیه و چیکار میکنه ؟ هر وبسایت و یا اپلیکیشنی دو بخش
@@ -29,7 +32,7 @@ const Mainbottom = () => {
           تو
           <strong>
             <Link to="https://www.aparat.com/v/M8NmW/">
-               وبینار رایگان ورود به دنیای برنامه نویسی وب 
+              وبینار رایگان ورود به دنیای برنامه نویسی وب
             </Link>
           </strong>
           شرکت کن

@@ -7,3 +7,8 @@
   justify-content: center;
   margin: 100px 0;
 }
+@include media(M) {
+  .main {
+    margin: 0;
+  }
+}

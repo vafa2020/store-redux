@@ -15,3 +15,8 @@
     color: $color-text;
   }
 }
+@include media(M) {
+  .Svgbox {
+    width: unset;
+  }
+}

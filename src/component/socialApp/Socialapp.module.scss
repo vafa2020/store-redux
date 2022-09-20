@@ -15,3 +15,12 @@
     }
   }
 }
+@include media(M) {
+  .socialApp {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

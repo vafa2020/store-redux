@@ -29,3 +29,16 @@
     }
   }
 }
+
+@include media(M) {
+  .Mainbottom {
+    flex-direction: column-reverse;
+  }
+  .textBanner {
+    p {
+      width: unset !important;
+      font-size: 0.8rem !important;
+      line-height: 1.5rem !important;
+    }
+  }
+}

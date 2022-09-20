@@ -9,8 +9,10 @@ const Maintop = () => {
         <img className={classes.banner} src={Banner} alt="banner" />
       </div>
       <div className={classes.textBanner}>
-        <h1>دوره های آموزشی آکادمی فرانت هوکس</h1>
-        <p>برنامه نویسی را سریع، آسان وپروژه محور یاد بگیرید</p>
+        <h1 className={classes.title}>دوره های آموزشی آکادمی فرانت هوکس</h1>
+        <p className={classes.subTitle}>
+          برنامه نویسی را سریع، آسان وپروژه محور یاد بگیرید
+        </p>
         <Button
           href="#course"
           size="large"

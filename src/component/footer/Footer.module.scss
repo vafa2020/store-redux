@@ -2,7 +2,17 @@
 
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  @include box(100%,400px, 0, $color-footer,0 8rem);
+  @include box(100%, 400px, 0, $color-footer, 0 8rem);
+}
+@include media(M) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+    @include box(100%, 400px, 0, $color-footer, 10px);
+  }
 }

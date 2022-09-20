@@ -24,3 +24,25 @@
     }
   }
 }
+@include media(M) {
+  .mainTop {
+    flex-direction: column;
+    align-items: center;
+    .boxImageBanner {
+      width: 100%;
+      text-align: center;
+      .banner {
+        height: 200px;
+      }
+    }
+    .textBanner {
+      .title {
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+      .subTitle {
+        font-size: 1rem;
+      }
+    }
+  }
+}

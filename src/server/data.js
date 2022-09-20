@@ -1,9 +1,9 @@
-import Git from "../img/git.svg";
-import Javascript from "../img/javascript.svg";
-import React from "../img/react.svg";
+import Git from "../img/git.png";
+import Javascript from "../img/javascript.png";
+import React from "../img/react.png";
 import Html from "../img/html-css.png";
 import Vscode from "../img/vs-code.png";
-import Flex from "../img/flex-grid.svg";
+import Flex from "../img/flex-grid.png";
 export const products = [
   {
     id: 1,
