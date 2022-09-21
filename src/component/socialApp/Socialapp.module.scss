@@ -3,9 +3,9 @@
 .socialApp {
   margin-top: 20px;
   ul {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(6, 150px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
   }
   li {
     list-style: none;

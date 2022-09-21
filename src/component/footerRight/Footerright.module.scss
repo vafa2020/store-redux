@@ -5,7 +5,7 @@
   flex-direction: column;
   position: relative;
   color: $color-text;
-  width: 70px;
+  // width: 70px;
   p {
     text-align: justify;
     color: initial;
@@ -15,11 +15,6 @@
     font-weight: bold;
   }
   .summeryPerson {
-    position: absolute;
-    top: 80px;
-    right: 30px;
-    display: flex;
-    align-items: center;
     a {
       text-decoration: none;
       color: $color-text;
