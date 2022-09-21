@@ -60,3 +60,23 @@
     }
   }
 }
+
+@include media(L) {
+  .honors {
+    padding: 0;
+  }
+  .honorsTitle {
+    width: unset;
+  }
+  .expreience {
+    margin-top: 10px;
+
+    div {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: 10px;
+      height: 160px;
+    }
+  }
+}

@@ -46,3 +46,21 @@
     }
   }
 }
+@include media(L) {
+  .mainTop {
+    align-items: center;
+    .boxImageBanner {
+      width: 100%;
+      text-align: center;
+      .banner {
+        height: 200px;
+      }
+    }
+    .textBanner {
+      .title {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

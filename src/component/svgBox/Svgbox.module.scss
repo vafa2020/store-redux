@@ -20,3 +20,12 @@
     width: unset;
   }
 }
+@include media(L) {
+  .Svgbox {
+    width: unset;
+    background-color: white;
+    border-radius: 5px;
+    height: 180px;
+    justify-content: space-evenly;
+  }
+}

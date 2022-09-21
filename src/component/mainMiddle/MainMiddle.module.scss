@@ -13,3 +13,11 @@
     flex-wrap: wrap;
   }
 }
+@include media(L) {
+  .mainMiddle {
+    display: flex !important;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+

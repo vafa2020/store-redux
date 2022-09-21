@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Mainbottom = () => {
   return (
     <div className={classes.Mainbottom}>
-      <span>
+      <div>
         <img className={classes.banner} src={Intro} alt="Intro" />
-      </span>
+      </div>
       <div className={classes.textBanner}>
         <p style={{ fontWeight: "bold", margin: 0 }}>
           فرانت اند (Front-End) چیه؟{" "}

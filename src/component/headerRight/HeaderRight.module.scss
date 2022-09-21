@@ -18,7 +18,12 @@
       position: absolute;
       right: 20%;
       top: 25%;
-      height:30px;
+      height: 30px;
     }
+  }
+}
+@include media(L) {
+  .headerRight {
+    flex-direction: row-reverse;
   }
 }

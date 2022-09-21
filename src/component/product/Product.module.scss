@@ -72,3 +72,15 @@
     }
   }
 }
+@include media(L) {
+  .products {
+    .product {
+      @include box(100%, unset, 10px, $color-light, 0);
+
+      img {
+        height: 250px;
+        width: 100%;
+      }
+    }
+  }
+}
